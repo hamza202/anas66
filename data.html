@@ -220,23 +220,39 @@
             <i class="fa fa-sort"></i>
             <select class="floatLabel" id="kondishon" required>
                 <option value="blank"></option>
-                <option value="Apple">Yes</option>
-                <option value="Banana">No </option>
+                <option value="yes">Yes</option>
+                <option value="no">No </option>
             </select>
             <label for="kondishon">*Bo tin algu kondishon of malesa?</label>
         </div>
 
     </div>
     <!--  More -->
-    <div class="form-group">
+    <div class="form-group show-hid">
         <h2 class="heading"> If yes, Please describe:</h2>
         <div class="controls">
             <textarea name="comments" class="floatLabel" id="comments"></textarea>
             <label for="comments">Comments</label>
-            <h2 class="heading"> ** You must upload a copy of your ID in order to submit the application</h2>
-            <button>Submit</button>
+
         </div>
+
     </div>
+    <div class="form-group">
+        <div class="controls">
+            <h2 class="heading"> ** You must upload a copy of your ID in order to submit the application</h2>
+        </div>
+        <div class="fil-input"></div>
+            <span class="control-fileupload">
+          <label for="file">Choose a file :</label>
+          <input type="file" id="file">
+             </span>
+        <div class="controls">
+
+        <button>Submit</button>
+        </div>
+
+    </div>
+
 </form>
 <script src="js/jquery.min.js"></script>
 <script>
@@ -259,6 +275,18 @@
 
         // just add a class of "floatLabel to the input field!"
         floatLabel(".floatLabel");
+    })(jQuery);
+    (function ($) {
+        $('#kondishon').on('change', function() {
+            if ( this.value == 'yes')
+            {
+                $(".show-hid").show();
+            }
+            else
+            {
+                $(".show-hid").hide();
+            }
+        });
     })(jQuery);
 </script>
 </body>
