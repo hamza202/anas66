@@ -278,7 +278,7 @@ input[type="date"]{
 .show-hid{
     display: none;
 }
-.fil-inputinput[type=file] {
+.fil-input input[type=file] {
     display: block !important;
     right: 1px;
     top: 1px;

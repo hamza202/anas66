@@ -237,15 +237,17 @@
         </div>
 
     </div>
+
     <div class="form-group">
         <div class="controls">
             <h2 class="heading"> ** You must upload a copy of your ID in order to submit the application</h2>
         </div>
-        <div class="fil-input"></div>
+        <div class="fil-input">
             <span class="control-fileupload">
           <label for="file">Choose a file :</label>
           <input type="file" id="file">
              </span>
+        </div>
         <div class="controls">
 
         <button>Submit</button>
@@ -287,6 +289,15 @@
                 $(".show-hid").hide();
             }
         });
+    })(jQuery);
+</script>
+<script>
+    (function ($) {
+        $('input[type=file]').change(function(){
+            var t = $(this).val();
+            var labelText = 'File : ' + t.substr(12, t.length);
+            $(this).prev('label').text(labelText);
+        })
     })(jQuery);
 </script>
 </body>
